@@ -1,25 +1,35 @@
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import { style, colors } from './style';
+import {
+	colors,
+	Countainer,
+	ContentBody,
+	ContentFooter,
+	ContentHeader,
+	Tittle,
+	ButtonRegister,
+	TextButtonRegister,
+	Imageback,
+} from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const Login: React.FC = () => {
 	return (
-		<View style={style.Countainer}>
-			<ImageBackground source={require('../../../assets/sol.png')} style={style.Image}>
-				<View style={style.ContentHeader}></View>
-				<View style={style.ContentBody}></View>
-				<View style={style.ContentFooter}>
+		<Countainer>
+			<Imageback  source={require('../../../assets/sol.png')}>
+				<ContentHeader></ContentHeader>
+				<ContentBody></ContentBody>
+				<ContentFooter>
 					<LinearGradient colors={colors} style={{ flex: 1 }}>
-						<Text style={style.Tittle}>Ainda não se</Text>
-						<Text style={style.Tittle}>cadastrou?</Text>
+						<Tittle>Ainda não se</Tittle>
+						<Tittle>cadastrou?</Tittle>
 
-						<TouchableOpacity style={style.ButtonSignUp}>
-							<Text style={style.TextButton}> Vamos lá </Text>
-						</TouchableOpacity>
+						<ButtonRegister>
+							<TextButtonRegister> Cadastrar-se </TextButtonRegister>
+						</ButtonRegister>
 					</LinearGradient>
-				</View>
-			</ImageBackground>
-		</View>
+				</ContentFooter>
+			</Imageback>
+		</Countainer>
 	);
 };
 

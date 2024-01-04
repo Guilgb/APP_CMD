@@ -1,45 +1,52 @@
+import styled from 'styled-components/native';
+
 import { StyleSheet } from 'react-native';
 
-export const style = StyleSheet.create({
-	Countainer: {
-		flex: 1,
-	},
-	Image: {
-		flex: 1,
-	},
-	ContentHeader: {
-		flex: 1,
-	},
-	ContentBody: {
-		flex: 1,
-	},
-	ContentFooter: {
-		flex: 1,
-	},
+export const Countainer = styled.View`
+	flex: 1;
+`;
+export const Image = styled.View`
+	flex: 1;
+`;
 
-	Tittle: {
-		textAlign: 'center',
-		fontSize: 40,
-		color: 'white',
-		justifyContent: 'center',
-	},
+export const ContentHeader = styled.View`
+	flex: 1;
+`;
 
-	ButtonSignUp: {
-		width: 315,
-		height: 62,
-		backgroundColor: '#64A4B0',
-		alignItems: 'center',
-		justifyContent: 'center',
-		borderRadius: 16,
-		marginTop: 20,
-		alignSelf: 'center',
-	},
+export const ContentBody = styled.View`
+	flex: 1;
+`;
+export const ContentFooter = styled.View`
+	flex: 1;
+`;
 
-	TextButton: {
-		color: 'white',
-		fontSize: 18,
-	},
-});
+export const Tittle = styled.Text`
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	justify-content: center;
+	margin-top: -10px;
+`;
+
+export const ButtonRegister = styled.TouchableOpacity`
+	width: 315px;
+	height: 62px;
+	background-color: #64a4b0;
+	align-items: center;
+	justify-content: center;
+	border-radius: 16px;
+	margin-top: 20px;
+	align-self: center;
+`;
+
+export const TextButtonRegister = styled.Text`
+	font-size: 18px;
+	color: white;
+`;
+
+export const Imageback = styled.ImageBackground`
+	flex: 1;
+`;
 
 export const colors = [
 	'rgba(5, 5, 5, 0.075)',
