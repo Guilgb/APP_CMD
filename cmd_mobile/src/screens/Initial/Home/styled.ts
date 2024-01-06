@@ -20,23 +20,25 @@ export const ContentFooter = styled.View`
 
 export const Tittle = styled.Text`
 	text-align: center;
-	font-size: 40px;
-	color: white;
+	font-size: 34px;
+	color: ${({ theme }) => theme.COLORS.WHITE};
 	justify-content: center;
 	margin-top: -10px;
+	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;
 
 export const SubTittle = styled.Text`
 	text-align: center;
 	font-size: 14px;
-	color: #a9a9a9;
+	color: ${({ theme }) => theme.COLORS.GREY_TEXT};
 	justify-content: center;
+	font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
 `;
 
 export const ButtonLetsGo = styled.TouchableOpacity`
 	width: 315px;
 	height: 62px;
-	background-color: #64a4b0;
+	background-color: ${({ theme }) => theme.COLORS.BLUE};
 	align-items: center;
 	justify-content: center;
 	border-radius: 16px;
@@ -45,8 +47,9 @@ export const ButtonLetsGo = styled.TouchableOpacity`
 `;
 
 export const TextButtonLetsGo = styled.Text`
-	font-size: 18px;
-	color: white;
+	font-size: 16px;
+	color: ${({ theme }) => theme.COLORS.WHITE};
+	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;
 
 export const Imageback = styled.ImageBackground`
