@@ -13,13 +13,14 @@ import {
 } from './styled';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { Header } from '../../../components/Header/index';
 
 const Home: React.FC = () => {
 	const { navigate } = useNavigation();
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
-				<ContentHeader></ContentHeader>
+				<Header showBackButton />
 				<ContentBody></ContentBody>
 				<ContentFooter>
 					<LinearGradient colors={colors} style={{ flex: 1 }}>

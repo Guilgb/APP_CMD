@@ -90,3 +90,11 @@ export const TextLoginButton = styled.Text`
 	align-self: center;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;
+
+export const ForgotThePassword = styled.TouchableOpacity``;
+export const ForgotThePasswordtext = styled.Text`
+	font-size: 12px;
+	color: white;
+	align-self: center;
+	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
+`;

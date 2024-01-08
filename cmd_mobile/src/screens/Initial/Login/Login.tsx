@@ -13,6 +13,8 @@ import {
 	BoxInp,
 	LoginButton,
 	TextLoginButton,
+	ForgotThePassword,
+	ForgotThePasswordtext,
 } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -32,6 +34,9 @@ const Login: React.FC = () => {
 					<LoginButton>
 						<TextLoginButton>Entrar</TextLoginButton>
 					</LoginButton>
+					<ForgotThePassword>
+						<ForgotThePasswordtext>Esqueci minha senha</ForgotThePasswordtext>
+					</ForgotThePassword>
 				</ContentBody>
 				<ContentFooter>
 					<LinearGradient colors={colors} style={{ flex: 1 }}>

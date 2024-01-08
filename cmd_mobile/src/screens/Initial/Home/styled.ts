@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { CaretLeft } from 'phosphor-react-native';
 
 export const Countainer = styled.View`
 	flex: 1;
@@ -54,6 +55,10 @@ export const TextButtonLetsGo = styled.Text`
 
 export const Imageback = styled.ImageBackground`
 	flex: 1;
+`;
+
+export const BackIcon = styled(CaretLeft)`
+	color: white;
 `;
 
 export const colors = [
