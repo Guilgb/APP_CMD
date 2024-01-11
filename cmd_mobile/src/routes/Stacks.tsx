@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Initial/Home/Home';
 import { Login } from '../screens/Initial/Login/Login';
+import { Tournments } from '../screens/Logget/Tournments/Tournments';
 
 const Stack = createStackNavigator();
 declare global {
@@ -12,6 +13,7 @@ declare global {
 			Login: undefined;
 			SignUp: undefined;
 			CrudDecks: undefined;
+			Tournments: undefined;
 		}
 	}
 }
@@ -33,6 +35,7 @@ export default function StackComponent() {
 			>
 				<Stack.Screen name="Home" component={Home}></Stack.Screen>
 				<Stack.Screen name="Login" component={Login}></Stack.Screen>
+				<Stack.Screen name="Tournments" component={Tournments}></Stack.Screen>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

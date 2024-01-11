@@ -17,8 +17,10 @@ import {
 	ForgotThePasswordtext,
 } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 const Login: React.FC = () => {
+	const { navigate } = useNavigation();
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
@@ -31,9 +33,14 @@ const Login: React.FC = () => {
 						<TextInp placeholder="Password" placeholderTextColor={'white'} />
 					</BoxInp>
 
-					<LoginButton>
+					<LoginButton
+						onPress={() => {
+							navigate('Tournments');
+						}}
+					>
 						<TextLoginButton>Entrar</TextLoginButton>
 					</LoginButton>
+					
 					<ForgotThePassword>
 						<ForgotThePasswordtext>Esqueci minha senha</ForgotThePasswordtext>
 					</ForgotThePassword>
