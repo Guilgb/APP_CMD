@@ -26,7 +26,9 @@ export const NumbersTier = styled.Text`
 export const BoxTextCommander = styled.View`
 	flex: 1;
 	height: 35px;
-	background-color: ${({ theme }) => theme.COLORS.WHITE};
+	background-color: white;
+	border-color: rgba(47, 45, 44, 0.1);
+	border: 0.3px;
 	border-radius: 14px;
 	margin-left: 4px;
 	margin-right: 4px;

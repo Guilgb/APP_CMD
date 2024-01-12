@@ -5,6 +5,7 @@ export default {
 		WHITE_100: '#DCDCDC',
 		GREY_BOX: '#313131',
 		GREY_TEXT: '#A9A9A9',
+		BLACK: '#000000',
 	},
 	FONT_FAMILY: {
 		REGULAR: 'Sora_400Regular',

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FlatList } from 'react-native';
 import { TextTitle } from '../../../components/Title/Title';
 import { ListTiers } from '../../../components/List/List';
+import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
 
 type Props = {
 	numbersTiers: number;
@@ -11,7 +12,11 @@ type Props = {
 };
 
 function Tournments() {
-	const [tournments, setTournments] = useState(['teste1', 'teste2', 'teste3']);
+	const [tournments, setTournments] = useState([
+		'Tevesh Szat ... / Rograkh ...',
+		'Kinnan, Bonder Prodigy',
+		'Tivit, Seller of Secrets',
+	]);
 	return (
 		<Container>
 			<ContentHeader>
@@ -26,6 +31,7 @@ function Tournments() {
 				</Gradient>
 			</ContentHeader>
 			<ContentBody>
+				<ButtonsFormat formatName="cEDH" />
 				<FlatList
 					data={tournments}
 					keyExtractor={(item) => item}
