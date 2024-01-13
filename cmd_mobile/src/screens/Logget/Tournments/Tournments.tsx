@@ -4,6 +4,8 @@ import { FlatList } from 'react-native';
 import { TextTitle } from '../../../components/Title/Title';
 import { ListTiers } from '../../../components/List/List';
 import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
+import { Search } from '../../../components/Search/Search';
+import { InfoSideBar } from '../../../components/InfoSidebar/InfoSidebar';
 
 type Props = {
 	numbersTiers: number;
@@ -27,11 +29,13 @@ function Tournments() {
 					end={{ x: 2, y: 0 }}
 					locations={[0.1, 0.5, 0.7, 1]}
 				>
+					<Search />
 					<TextTitle title={'Aqui'} />
 				</Gradient>
 			</ContentHeader>
 			<ContentBody>
 				<ButtonsFormat formatName="cEDH" />
+				<InfoSideBar />
 				<FlatList
 					data={tournments}
 					keyExtractor={(item) => item}

@@ -11,7 +11,7 @@ export const ContentHeader = styled.View`
 
 export const ContentBody = styled.View`
 	flex: 5;
-	background-color: ${({ theme }) => theme.COLORS.WHITE};
+	background-color: rgba(220, 220, 220, 1);
 `;
 export const ContentFooter = styled.View`
 	flex: 1;
