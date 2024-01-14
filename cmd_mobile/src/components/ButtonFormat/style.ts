@@ -1,33 +1,27 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
 
-export type ButtonStyleClicked = 'CLICK' | 'NOCLICK';
-type Props = {
-	type: ButtonStyleClicked;
+export type ButtonStyleClicked = {
+	isActive?: boolean;
 };
 
-export const BoxButtonsFormat = styled.View`
-	flex-direction: row;
-	width: 350px;
-	justify-content: center;
-	align-self: center;
-`;
-
-export const ButtonFormat = styled(TouchableOpacity)<Props>`
-	flex: 1;
-	height: 38px;
-	background-color: ${({ theme, type }) =>
-		type === 'NOCLICK' ? theme.COLORS.WHITE : theme.COLORS.BLUE};
-	margin: 4px;
-	color: ${({ theme, type }) => (type === 'CLICK' ? theme.COLORS.WHITE : theme.COLORS.BLACK)};
-	border-radius: 15px;
-	justify-content: center;
+export const CountainerButtonsFormat = styled(TouchableOpacity)<ButtonStyleClicked>`
+	${({ theme, isActive }) =>
+		isActive &&
+		css`
+			background-color: ${theme.COLORS.BLUE};
+		`};
+	height: 40px;
+	width: 80px;
+	border-radius: 12px;
+	margin: 6px;
 	align-items: center;
+	justify-content: center;
 `;
 
-export const TextButtonFormat = styled.Text<Props>`
-	font-size: 14px;
-	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
-	color: ${({ theme, type }) => (type === 'CLICK' ? theme.COLORS.BLACK : theme.COLORS.WHITE)};
-	margin: 2px;
+export const TitleButtonFormat = styled.Text`
+	${({ theme }) => css`
+		font-family: ${theme.FONT_FAMILY.SEMI_BOLD};
+		color: ${theme.COLORS.GREY_TEXT};
+	`}
 `;

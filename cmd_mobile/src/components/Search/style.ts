@@ -1,5 +1,13 @@
 import styled from 'styled-components/native';
-import { TextInput, TouchableOpacity } from 'react-native';
+import { TextInput, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Feather, AntDesign } from '@expo/vector-icons';
+import { IStyledComponent } from 'styled-components/dist/types';
+
+export type ButtonIconSearchStyleProps = 'CLICK' | 'NOCLICK';
+
+export type Props = {
+	type: ButtonIconSearchStyleProps;
+};
 
 export const CoutainerSearch = styled.View`
 	flex-direction: row;
@@ -11,20 +19,10 @@ export const CoutainerSearch = styled.View`
 	border-radius: 16px;
 `;
 
-export const ImageSearch = styled.Image`
-	min-height: 30px;
-	max-height: 30px;
-	min-width: 30px;
-	max-width: 30px;
-	align-self: center;
-	margin-left: 10px;
-`;
-
 export const TextSearchInput = styled(TextInput)`
 	flex: 1;
 	color: ${({ theme }) => theme.COLORS.WHITE};
 	font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-	margin-left: 10px;
 `;
 
 export const ButtonSearch = styled(TouchableOpacity)`
@@ -36,4 +34,23 @@ export const ButtonSearch = styled(TouchableOpacity)`
 	border-radius: 12px;
 	align-self: center;
 	margin-right: 10px;
+`;
+
+export const IconSearch: any = styled(AntDesign).attrs<Props>(({ theme, type }) => ({
+	size: 25,
+	color: '#FFFFFF',
+	name: 'rightcircleo',
+}));
+`
+	align-self: center;
+	padding: 10px;
+`;
+
+export const ImageSearch: any = styled(Feather).attrs<Props>(({ theme, type }) => ({
+	size: 20,
+	color: '#FFFFFF',
+	name: 'search',
+}))`
+	align-self: center;
+	padding: 10px;
 `;

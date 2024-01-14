@@ -35,12 +35,12 @@ const Login: React.FC = () => {
 
 					<LoginButton
 						onPress={() => {
-							navigate('Tournments');
+							navigate('TabNavigator');
 						}}
 					>
 						<TextLoginButton>Entrar</TextLoginButton>
 					</LoginButton>
-					
+
 					<ForgotThePassword>
 						<ForgotThePasswordtext>Esqueci minha senha</ForgotThePasswordtext>
 					</ForgotThePassword>

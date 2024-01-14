@@ -1,4 +1,12 @@
-import { Container, ContentHeader, ContentBody, ContentFooter, colors, Gradient } from './styled';
+import {
+	Container,
+	ContentHeader,
+	ContentBody,
+	ContentFooter,
+	colors,
+	Gradient,
+	FormatsInBody,
+} from './styled';
 import { useState } from 'react';
 import { FlatList } from 'react-native';
 import { TextTitle } from '../../../components/Title/Title';
@@ -8,7 +16,7 @@ import { Search } from '../../../components/Search/Search';
 import { InfoSideBar } from '../../../components/InfoSidebar/InfoSidebar';
 
 type Props = {
-	numbersTiers: number;
+	numbersTiers: any;
 	textCommander: string;
 	winrate: number;
 };
@@ -18,7 +26,16 @@ function Tournments() {
 		'Tevesh Szat ... / Rograkh ...',
 		'Kinnan, Bonder Prodigy',
 		'Tivit, Seller of Secrets',
+		'Liesa, Shroud of Dusk',
+		'Atraxa, Praetors',
+		'The Ur-Dragon',
+		'Yuriko, the Tiger',
+		'Kenrith, the Returned King',
+		'Shorikai, Genesis Engine',
+		'Meren of Clan Nel Toth',
 	]);
+
+	const [format, setFormat] = useState('cEDH');
 	return (
 		<Container>
 			<ContentHeader>
@@ -34,13 +51,26 @@ function Tournments() {
 				</Gradient>
 			</ContentHeader>
 			<ContentBody>
-				<ButtonsFormat formatName="cEDH" />
+				<FormatsInBody>
+					<FlatList
+						data={['cEDH', 'c500', 'Conquest', 'Casual']}
+						keyExtractor={(item) => item}
+						renderItem={({ item }) => (
+							<ButtonsFormat
+								title={item}
+								isActive={item === format}
+								onPress={() => setFormat(item)}
+							/>
+						)}
+						horizontal
+					/>
+				</FormatsInBody>
 				<InfoSideBar />
 				<FlatList
 					data={tournments}
 					keyExtractor={(item) => item}
 					renderItem={({ item }) => (
-						<ListTiers numbersTiers={1} textCommander={item} winrate={1} />
+						<ListTiers numbersTiers={1} textCommander={item} winrate={50} />
 					)}
 				/>
 			</ContentBody>

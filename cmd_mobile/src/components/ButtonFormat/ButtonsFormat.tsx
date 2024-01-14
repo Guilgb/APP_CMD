@@ -1,28 +1,16 @@
 import { TouchableOpacityProps } from 'react-native';
-import { BoxButtonsFormat, ButtonFormat, TextButtonFormat, ButtonStyleClicked } from './style';
+import { ButtonStyleClicked, CountainerButtonsFormat, TitleButtonFormat } from './style';
 
-type Props = TouchableOpacityProps & {
-	formatName: string;
-	type?: ButtonStyleClicked;
-};
-export function ButtonsFormat(formatName: Props, type: any, ...rest: any[]) {
-	type = 'CLICk';
+type Props = TouchableOpacityProps &
+	ButtonStyleClicked & {
+		title: string;
+		isActive?: boolean;
+	};
+
+export function ButtonsFormat({ title, isActive = true, ...rest }: Props) {
 	return (
-		<BoxButtonsFormat>
-			<ButtonFormat type={type} {...rest}>
-				<TextButtonFormat type={type}>cEDH</TextButtonFormat>
-			</ButtonFormat>
-			<ButtonFormat type={'NOCLICK'}>
-				<TextButtonFormat type={'NOCLICK'}>c500</TextButtonFormat>
-			</ButtonFormat>
-
-			<ButtonFormat type={'NOCLICK'}>
-				<TextButtonFormat type={'NOCLICK'}>Conquest</TextButtonFormat>
-			</ButtonFormat>
-
-			<ButtonFormat type={'NOCLICK'}>
-				<TextButtonFormat type={'NOCLICK'}>Casual</TextButtonFormat>
-			</ButtonFormat>
-		</BoxButtonsFormat>
+		<CountainerButtonsFormat isActive={isActive} {...rest}>
+			<TitleButtonFormat>{title}</TitleButtonFormat>
+		</CountainerButtonsFormat>
 	);
 }

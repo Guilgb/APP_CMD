@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Initial/Home/Home';
 import { Login } from '../screens/Initial/Login/Login';
 import { Tournments } from '../screens/Logget/Tournments/Tournments';
+import TabNavigator from './TabNavigator';
 
 const Stack = createStackNavigator();
 declare global {
@@ -13,7 +14,7 @@ declare global {
 			Login: undefined;
 			SignUp: undefined;
 			CrudDecks: undefined;
-			Tournments: undefined;
+			TabNavigator: undefined;
 		}
 	}
 }
@@ -33,9 +34,9 @@ export default function StackComponent() {
 					headerShown: false,
 				}}
 			>
-				<Stack.Screen name="Home" component={Home}></Stack.Screen>
-				<Stack.Screen name="Login" component={Login}></Stack.Screen>
-				<Stack.Screen name="Tournments" component={Tournments}></Stack.Screen>
+				<Stack.Screen name="Home" component={Home} />
+				<Stack.Screen name="Login" component={Login} />
+				<Stack.Screen name="TabNavigator" component={TabNavigator.TabNavigator} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

@@ -1,4 +1,4 @@
-import { StatusBar } from 'react-native';
+import { StatusBar, SafeAreaView } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
 import theme from './src/theme';
@@ -13,10 +13,12 @@ const App: React.FC = () => {
 	const [fontsLoaded] = useFonts({ Sora_400Regular, Sora_600SemiBold });
 
 	return (
-		<ThemeProvider theme={theme}>
-			<StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
-			{fontsLoaded ? <StackComponent /> : <Loading />}
-		</ThemeProvider>
+		
+			<ThemeProvider theme={theme}>
+				<StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+				{fontsLoaded ? <StackComponent /> : <Loading />}
+			</ThemeProvider>
+
 	);
 };
 

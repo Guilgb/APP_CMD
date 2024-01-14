@@ -1,12 +1,14 @@
-import { TextSearchInput, CoutainerSearch, ButtonSearch, ImageSearch } from './style';
-import { TextInputProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native-gesture-handler';
+import { TextSearchInput, CoutainerSearch, ButtonSearch, ImageSearch, IconSearch } from './style';
 
-export function Search() {
+type Props = TouchableOpacityProps & {};
+
+export function Search({}: Props) {
 	return (
 		<CoutainerSearch>
-			<ImageSearch source={require('../../assets/lupa.png')} />
+			<ImageSearch />
 			<TextSearchInput placeholder="Pesquisar Torneios ..." placeholderTextColor={'#FFF'} />
-			<ButtonSearch />
+			<ButtonSearch></ButtonSearch>
 		</CoutainerSearch>
 	);
 }
