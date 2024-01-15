@@ -8,7 +8,7 @@ import { Tournments } from '../screens/Logget/Tournments/Tournments';
 const Tab = createBottomTabNavigator();
 const StyleTab = StyleSheet.create({
 	tabB: {
-		height: 80,
+		height: 70,
 		position: 'absolute',
 		backgroundColor: '#ffffff',
 		elevation: 0,

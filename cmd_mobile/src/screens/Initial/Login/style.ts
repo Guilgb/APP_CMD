@@ -1,6 +1,7 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
-export const Countainer = styled.View`
+export const Countainer = styled(SafeAreaView)`
 	flex: 1;
 `;
 export const Image = styled.View`

@@ -13,15 +13,18 @@ export const CoutainerSearch = styled.View`
 	flex-direction: row;
 	min-height: 52px;
 	max-height: 52px;
-	background-color: rgba(125, 124, 124, 1);
+	background-color: ${({ theme }) => theme.COLORS.GREY_BOX};
+	margin-top: 65px;
+	margin-bottom: 25px;
 	margin-left: 32px;
 	margin-right: 32px;
 	border-radius: 16px;
+	elevation: 6;
 `;
 
 export const TextSearchInput = styled(TextInput)`
 	flex: 1;
-	color: ${({ theme }) => theme.COLORS.WHITE};
+	color: ${({ theme }) => theme.COLORS.GREY_TEXT};
 	font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
 `;
 

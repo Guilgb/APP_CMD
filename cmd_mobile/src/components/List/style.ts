@@ -28,10 +28,10 @@ export const BoxTextCommander = styled.View`
 	height: 35px;
 	background-color: white;
 	border-color: rgba(47, 45, 44, 0.1);
-	border: 0.3px;
 	border-radius: 14px;
 	margin-left: 4px;
 	margin-right: 4px;
+	elevation: 6;
 `;
 
 export const TextCommanders = styled.Text`

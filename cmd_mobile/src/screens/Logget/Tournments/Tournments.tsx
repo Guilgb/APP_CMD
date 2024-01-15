@@ -47,7 +47,7 @@ function Tournments() {
 					locations={[0.1, 0.5, 0.7, 1]}
 				>
 					<Search />
-					<TextTitle title={'Aqui'} />
+					<TextTitle title={'Ultimos Torneios'} />
 				</Gradient>
 			</ContentHeader>
 			<ContentBody>
