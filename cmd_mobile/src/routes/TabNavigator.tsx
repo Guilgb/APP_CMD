@@ -2,8 +2,9 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Feather, Foundation, FontAwesome5, Entypo } from '@expo/vector-icons';
+import { Feather, Foundation, FontAwesome5 } from '@expo/vector-icons';
 import { Tournments } from '../screens/Logget/Tournments/Tournments';
+import { CreateMyLists } from '../screens/Logget/CreateMyLists/CreateMyLists';
 
 const Tab = createBottomTabNavigator();
 const StyleTab = StyleSheet.create({
@@ -41,6 +42,15 @@ const TabNavigator = () => {
 					options={{
 						tabBarIcon: ({ color, size }) => (
 							<Foundation name="home" color={color} size={24}></Foundation>
+						),
+					}}
+				/>
+				<Tab.Screen
+					name="CreateMyLists"
+					component={CreateMyLists}
+					options={{
+						tabBarIcon: ({ color, size }) => (
+							<FontAwesome5 name="plus" color={color} size={24}></FontAwesome5>
 						),
 					}}
 				/>
