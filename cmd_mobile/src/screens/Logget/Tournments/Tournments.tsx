@@ -14,6 +14,7 @@ import { ListTiers } from '../../../components/List/List';
 import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
 import { Search } from '../../../components/Search/Search';
 import { InfoSideBar } from '../../../components/InfoSidebar/InfoSidebar';
+import { BoxImageCommander } from '../../../components/BoxImageCommanders/BoxImageCommanders';
 
 type Props = {
 	numbersTiers: any;
@@ -48,6 +49,7 @@ function Tournments() {
 				>
 					<Search />
 					<TextTitle title={'Ultimos Torneios'} />
+					<BoxImageCommander title={tournments[0]} />
 				</Gradient>
 			</ContentHeader>
 			<ContentBody>

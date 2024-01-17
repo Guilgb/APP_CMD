@@ -14,8 +14,8 @@ export const CoutainerSearch = styled.View`
 	min-height: 52px;
 	max-height: 52px;
 	background-color: ${({ theme }) => theme.COLORS.GREY_BOX};
-	margin-top: 65px;
-	margin-bottom: 25px;
+	margin-top: 18px;
+	margin-bottom: 5px;
 	margin-left: 32px;
 	margin-right: 32px;
 	border-radius: 16px;

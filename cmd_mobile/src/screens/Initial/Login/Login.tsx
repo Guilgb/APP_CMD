@@ -18,19 +18,29 @@ import {
 } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 
 const Login: React.FC = () => {
 	const { navigate } = useNavigation();
+	const [userLogin, setUserLogin] = useState('');
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
 				<ContentHeader></ContentHeader>
 				<ContentBody>
 					<BoxInp>
-						<TextInp placeholder="Email" placeholderTextColor={'white'} />
+						<TextInp
+							placeholder="Email"
+							placeholderTextColor={'white'}
+							onChangeText={setUserLogin}
+						/>
 					</BoxInp>
 					<BoxInp>
-						<TextInp placeholder="Password" placeholderTextColor={'white'} />
+						<TextInp
+							placeholder="Password"
+							placeholderTextColor={'white'}
+							onChangeText={setUserLogin}
+						/>
 					</BoxInp>
 
 					<LoginButton
