@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
+import { useForm, Controller } from 'react-hook-form';
 import {
 	colors,
 	Countainer,
@@ -18,32 +18,56 @@ import {
 } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
 
 const Login: React.FC = () => {
 	const { navigate } = useNavigation();
-	const [userLogin, setUserLogin] = useState('');
+
+	const {
+		control,
+		handleSubmit,
+		formState: { errors },
+	} = useForm();
+	function handleLogin(data: any) {
+		console.log(data);
+	}
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
 				<ContentHeader></ContentHeader>
 				<ContentBody>
 					<BoxInp>
-						<TextInp
-							placeholder="Email"
-							placeholderTextColor={'white'}
-							onChangeText={setUserLogin}
+						<Controller
+							control={control}
+							name="email"
+							render={({ field: { onChange, onBlur, value } }) => (
+								<TextInp
+									placeholder="Email"
+									placeholderTextColor={'white'}
+									onChangeText={onChange}
+									value={value}
+									onBlur={onBlur}
+								/>
+							)}
 						/>
 					</BoxInp>
 					<BoxInp>
-						<TextInp
-							placeholder="Password"
-							placeholderTextColor={'white'}
-							onChangeText={setUserLogin}
-						/>
+						<Controller
+							control={control}
+							name="senha"
+							render={({ field: { onChange, onBlur, value } }) => (
+								<TextInp
+									placeholder="Senha"
+									placeholderTextColor={'white'}
+									onChangeText={onChange}
+									value={value}
+									onBlur={onBlur}
+								/>
+							)}
+						></Controller>
 					</BoxInp>
 
 					<LoginButton
+						onPressIn={handleSubmit(handleLogin)}
 						onPress={() => {
 							navigate('TabNavigator');
 						}}

@@ -40,13 +40,7 @@ function Tournments() {
 	return (
 		<Container>
 			<ContentHeader>
-				<Gradient
-					colors={colors}
-					style={{ flex: 1 }}
-					start={{ x: 0, y: 0.5 }}
-					end={{ x: 2, y: 0 }}
-					locations={[0.1, 0.5, 0.7, 1]}
-				>
+				<Gradient colors={colors} style={{ flex: 1 }} locations={[0.1, 0.5, 0.7, 1]}>
 					<Search />
 					<TextTitle title={'Ultimos Torneios'} />
 					<BoxImageCommander title={tournments[0]} />
