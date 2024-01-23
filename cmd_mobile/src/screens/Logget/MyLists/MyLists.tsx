@@ -6,6 +6,7 @@ import { TextTitle } from '../../../components/Title/Title';
 import { ContentFooter } from '../Tournments/styled';
 import { Container, ContentBody, ContentHeader, Gradient, colors, FormatsInBody } from './style';
 import { InfoSideBarMyLists } from '../../../components/InfoBarMyLists/InfoBarMyLists';
+import { MyListsComponent } from '../../../components/MyListComponent/MyListComponent';
 
 function MyLists() {
 	const [format, setFormat] = useState('cEDH');
@@ -34,6 +35,7 @@ function MyLists() {
 					/>
 					<InfoSideBarMyLists />
 				</FormatsInBody>
+				<MyListsComponent textCommander="Test" dateCreate="28/01/1999" />
 			</ContentBody>
 			<ContentFooter></ContentFooter>
 		</Container>

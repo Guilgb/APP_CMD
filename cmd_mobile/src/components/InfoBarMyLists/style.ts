@@ -13,11 +13,12 @@ export const BoxInfo = styled.View`
 `;
 
 export const InfoBarNameCommander = styled.Text`
-	flex: 2;
+	flex: 3;
 	${({ theme }) => css`
 		color: rgba(100, 164, 176, 1);
 		font-family: ${theme.FONT_FAMILY.SEMI_BOLD};
 	`}
+	margin-left: 10px;
 	font-size: 16px;
 `;
 
@@ -27,5 +28,6 @@ export const InfoBarDateCommander = styled.Text`
 		color: ${theme.COLORS.BLUE};
 		font-family: ${theme.FONT_FAMILY.SEMI_BOLD};
 	`}
+	margin-left: 10px;
 	font-size: 16px;
 `;
