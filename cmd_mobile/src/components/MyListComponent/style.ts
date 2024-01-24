@@ -1,4 +1,11 @@
 import styled, { css } from 'styled-components/native';
+import { Feather, SimpleLineIcons } from '@expo/vector-icons';
+
+export type ButtonIconSearchStyleProps = 'CLICK' | 'NOCLICK';
+
+export type Props = {
+	type: ButtonIconSearchStyleProps;
+};
 
 export const Container = styled.View`
 	flex-direction: row;
@@ -7,8 +14,8 @@ export const Container = styled.View`
 	align-self: center;
 `;
 
-export const CommanderTextsBox = styled.View`
-	flex: 3;
+export const CommanderTextsBox = styled.TouchableOpacity`
+	flex: 10;
 	${({ theme }) => css`
 		background-color: ${theme.COLORS.WHITE};
 	`};
@@ -18,10 +25,11 @@ export const CommanderTextsBox = styled.View`
 	margin-right: 14px;
 	margin-bottom: 10px;
 	justify-content: center;
+	elevation: 6;
 `;
 
 export const DateListCreateBox = styled.View`
-	flex: 1;
+	flex: 5;
 	${({ theme }) => css`
 		background-color: ${theme.COLORS.BLUE};
 		font-family: ${theme.FONT_FAMILY.SEMI_BOLD};
@@ -29,6 +37,7 @@ export const DateListCreateBox = styled.View`
 	height: 35px;
 	border-radius: 20px;
 	justify-content: center;
+	elevation: 6;
 `;
 
 export const CommanderText = styled.Text`
@@ -48,4 +57,17 @@ export const DateText = styled.Text`
 
 	align-self: center;
 	font-size: 14px;
+`;
+
+export const OptionsBar = styled.TouchableOpacity`
+	flex: 1;
+`;
+
+export const ImageSearch: any = styled(SimpleLineIcons).attrs<Props>(({ theme, type }) => ({
+	size: 20,
+	color: '#FFFFFF',
+	name: 'options-vertical',
+}))`
+	align-self: center;
+	margin-top: 8px;
 `;

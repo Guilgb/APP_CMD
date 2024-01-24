@@ -1,4 +1,12 @@
-import { Container, CommanderTextsBox, DateListCreateBox, CommanderText, DateText } from './style';
+import {
+	Container,
+	CommanderTextsBox,
+	DateListCreateBox,
+	CommanderText,
+	DateText,
+	OptionsBar,
+	ImageSearch,
+} from './style';
 type Props = {
 	textCommander: string;
 	dateCreate: string;
@@ -12,6 +20,9 @@ function MyListsComponent({ textCommander, dateCreate }: Props) {
 			<DateListCreateBox>
 				<DateText>{dateCreate}</DateText>
 			</DateListCreateBox>
+			<OptionsBar> 
+			<ImageSearch />
+			</OptionsBar>
 		</Container>
 	);
 }
