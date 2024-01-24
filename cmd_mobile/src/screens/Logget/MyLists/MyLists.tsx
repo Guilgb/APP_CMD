@@ -10,6 +10,7 @@ import { MyListsComponent } from '../../../components/MyListComponent/MyListComp
 
 function MyLists() {
 	const [format, setFormat] = useState('cEDH');
+	const [listsCommander, setListCommander] = useState([{ commander: 'nome', data: '28/01/1999'}]);
 
 	return (
 		<Container>
@@ -35,7 +36,13 @@ function MyLists() {
 					/>
 					<InfoSideBarMyLists />
 				</FormatsInBody>
-				<MyListsComponent textCommander="Test" dateCreate="28/01/1999" />
+				<FlatList
+					data={listsCommander}
+					keyExtractor={(item) => item.commander}
+					renderItem={({ item }) => (
+						<MyListsComponent textCommander={item.commander} dateCreate={item.data} />
+					)}
+				/>
 			</ContentBody>
 			<ContentFooter></ContentFooter>
 		</Container>

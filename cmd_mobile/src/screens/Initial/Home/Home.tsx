@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
-				<Header showBackButton />
+				<Header showBackButton={false} />
 				<ContentBody></ContentBody>
 				<ContentFooter>
 					<LinearGradient colors={colors} style={{ flex: 1 }}>

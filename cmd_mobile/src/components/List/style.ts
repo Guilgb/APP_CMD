@@ -23,7 +23,7 @@ export const NumbersTier = styled.Text`
 	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;
 
-export const BoxTextCommander = styled.View`
+export const BoxTextCommander = styled.TouchableOpacity`
 	flex: 1;
 	height: 35px;
 	background-color: white;
