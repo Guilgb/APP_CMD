@@ -14,12 +14,12 @@ export const Tiers = styled.View`
 	background-color: ${({ theme }) => theme.COLORS.BLUE};
 	border-radius: 20px;
 	justify-content: center;
+	align-items: center;
 `;
 
 export const NumbersTier = styled.Text`
 	font-size: 16px;
 	color: ${({ theme }) => theme.COLORS.WHITE};
-	align-self: center;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;
 
@@ -31,6 +31,7 @@ export const BoxTextCommander = styled.TouchableOpacity`
 	border-radius: 14px;
 	margin-left: 4px;
 	margin-right: 4px;
+	justify-items: center;
 	elevation: 6;
 `;
 
@@ -39,9 +40,7 @@ export const TextCommanders = styled.Text`
 	font-size: 13px;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 	margin-left: 7px;
-	align-items: center;
-	justify-content: center;
-	padding-top: 5px;
+	padding-top: 8px;
 	color: black;
 `;
 
@@ -50,13 +49,12 @@ export const Winrate = styled.View`
 	height: 35px;
 	border-radius: 20px;
 	background-color: ${({ theme }) => theme.COLORS.BLUE};
+	justify-content: center;
+	align-items: center;
 `;
 
 export const NumbersWinrate = styled.Text`
 	font-size: 15px;
 	color: ${({ theme }) => theme.COLORS.WHITE};
-	align-self: center;
-	justify-content: center;
-	margin-top: 6px;
 	font-family: ${({ theme }) => theme.FONT_FAMILY.SEMI_BOLD};
 `;

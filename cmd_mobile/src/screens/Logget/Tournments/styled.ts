@@ -19,7 +19,7 @@ export const ContentFooter = styled.View``;
 export const Gradient = styled(LinearGradient)``;
 
 export const colors = ['#313131', '#222222', '#1C1C1C', '#1C1C1C'];
-
 export const FormatsInBody = styled.View`
 	align-items: center;
 `;
+
