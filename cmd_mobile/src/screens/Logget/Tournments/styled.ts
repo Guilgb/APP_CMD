@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const Container = styled(SafeAreaView)`
 	flex: 1;
+	background-color: white;
 `;
 
 export const ContentHeader = styled.View`
@@ -22,4 +23,3 @@ export const colors = ['#313131', '#222222', '#1C1C1C', '#1C1C1C'];
 export const FormatsInBody = styled.View`
 	align-items: center;
 `;
-

@@ -6,6 +6,8 @@ export default {
 		GREY_BOX: '#313131',
 		GREY_TEXT: '#A9A9A9',
 		BLACK: '#000000',
+		ORANGE: '#AB7A3D',
+		RED: '#AB3D3D',
 	},
 	FONT_FAMILY: {
 		REGULAR: 'Sora_400Regular',

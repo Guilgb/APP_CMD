@@ -1,3 +1,4 @@
+import { PopUpMenu } from '../PopUpMenu/PopUpMenu';
 import {
 	Container,
 	CommanderTextsBox,
@@ -9,20 +10,20 @@ import {
 } from './style';
 type Props = {
 	textCommander: string;
+	textPartner?: string;
 	dateCreate: string;
 };
-function MyListsComponent({ textCommander, dateCreate }: Props) {
+function MyListsComponent({ textCommander, textPartner, dateCreate }: Props) {
 	return (
 		<Container>
 			<CommanderTextsBox>
-				<CommanderText> {textCommander}</CommanderText>
+				<CommanderText> {textCommander} </CommanderText>
+				<CommanderText> {textPartner} </CommanderText>
 			</CommanderTextsBox>
 			<DateListCreateBox>
 				<DateText>{dateCreate}</DateText>
 			</DateListCreateBox>
-			<OptionsBar> 
-			<ImageSearch />
-			</OptionsBar>
+			<PopUpMenu />
 		</Container>
 	);
 }

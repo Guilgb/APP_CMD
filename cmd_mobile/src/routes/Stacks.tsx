@@ -3,8 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Initial/Home/Home';
 import { Login } from '../screens/Initial/Login/Login';
-import { Tournments } from '../screens/Logget/Tournments/Tournments';
 import TabNavigator from './TabNavigator';
+import { UpdateMyLists } from '../screens/Logget/UpdateMyLists/UpdateMyLists';
 
 const Stack = createStackNavigator();
 declare global {
@@ -37,6 +37,7 @@ export default function StackComponent() {
 				<Stack.Screen name="Home" component={Home} />
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="TabNavigator" component={TabNavigator.TabNavigator} />
+				<Stack.Screen name="UpdateMyList" component={UpdateMyLists} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

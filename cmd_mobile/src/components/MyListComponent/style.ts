@@ -15,12 +15,11 @@ export const Container = styled.View`
 `;
 
 export const CommanderTextsBox = styled.TouchableOpacity`
-	flex: 10;
+	flex: 12;
 	${({ theme }) => css`
 		background-color: ${theme.COLORS.WHITE};
 	`};
-	font-size: 12px;
-	height: 35px;
+	height: 43px;
 	border-radius: 20px;
 	margin-right: 14px;
 	margin-bottom: 10px;
@@ -34,7 +33,7 @@ export const DateListCreateBox = styled.View`
 		background-color: ${theme.COLORS.BLUE};
 		font-family: ${theme.FONT_FAMILY.SEMI_BOLD};
 	`};
-	height: 35px;
+	height: 43px;
 	border-radius: 20px;
 	justify-content: center;
 	elevation: 6;
@@ -46,7 +45,6 @@ export const CommanderText = styled.Text`
 		color: ${theme.COLORS.BLACK};
 	`};
 	font-size: 14px;
-	align-content: center;
 	margin-left: 10px;
 `;
 
