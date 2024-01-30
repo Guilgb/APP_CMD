@@ -4,17 +4,14 @@ import {
 	ModalOptions,
 	OptionButton,
 	Options,
-	ButtosOptions,
-	TextButtonOptions,
-	DeleteIcon,
 	Container,
 	EditeButton,
 	DeleteButton,
 	TextButtonMod,
 	OpenButton,
 } from './style';
-import { SafeAreaView } from 'react-native';
 import { Modalize } from 'react-native-modalize';
+import { useNavigation } from '@react-navigation/native';
 
 function PopUpMenu() {
 	const [visible, setVisible] = useState(false);
@@ -23,6 +20,7 @@ function PopUpMenu() {
 	function onOpen() {
 		modalizeRef.current?.open();
 	}
+	const { navigate } = useNavigation();
 	return (
 		<Container>
 			<ButtonMenu onPress={onOpen}>
@@ -33,7 +31,11 @@ function PopUpMenu() {
 					<OpenButton>
 						<TextButtonMod>Abrir</TextButtonMod>
 					</OpenButton>
-					<EditeButton>
+					<EditeButton
+						onPress={() => {
+							navigate('UpdateMyLists');
+						}}
+					>
 						<TextButtonMod>Editar</TextButtonMod>
 					</EditeButton>
 					<DeleteButton>

@@ -5,9 +5,6 @@ import {
 	Container,
 	ContentBody,
 	ContentFooter,
-	ContentHeader,
-	Gradient,
-	colors,
 	FormatsInBody,
 	BoxTextInput,
 	TextInputList,
@@ -16,6 +13,7 @@ import {
 } from './style';
 import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
 import { TextTitle } from '../../../components/Title/Title';
+import { Title } from '../../../components/Title/style';
 
 function handleList(data: any) {
 	console.log(data);
@@ -31,12 +29,8 @@ function UpdateMyLists() {
 	} = useForm();
 	return (
 		<Container>
-			<ContentHeader>
-				<Gradient colors={colors} style={{ flex: 1 }} locations={[0.1, 0.5, 0.7, 1]}>
-					<TextTitle title={'Editar Minha Lista'} />
-				</Gradient>
-			</ContentHeader>
 			<ContentBody>
+				<Title> Editar Lista</Title>
 				<Controller
 					control={control}
 					name="format"
@@ -124,7 +118,6 @@ function UpdateMyLists() {
 
 				<ButtonListUpdate
 					onPressIn={handleSubmit(handleList)}
-					// onPress={}
 				>
 					<TextButtonListUpdate> Update </TextButtonListUpdate>
 				</ButtonListUpdate>

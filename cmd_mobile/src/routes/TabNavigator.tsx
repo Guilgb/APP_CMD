@@ -6,8 +6,8 @@ import { Foundation, FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { Tournments } from '../screens/Logget/Tournments/Tournments';
 import { CreateMyLists } from '../screens/Logget/CreateMyLists/CreateMyLists';
 import { MyLists } from '../screens/Logget/MyLists/MyLists';
+import { StackComponentLogget } from './StacksLogget';
 
-const Tab = createBottomTabNavigator();
 const StyleTab = StyleSheet.create({
 	tabB: {
 		height: 70,
@@ -25,6 +25,7 @@ const StyleTab = StyleSheet.create({
 		right: 0,
 	},
 });
+const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
 	return (
@@ -63,6 +64,11 @@ const TabNavigator = () => {
 							<FontAwesome5 name="plus" color={color} size={24}></FontAwesome5>
 						),
 					}}
+				/>
+				<Tab.Screen
+					name="UpdateMyLists"
+					component={StackComponentLogget}
+					options={{ headerShown: false }}
 				/>
 			</Tab.Navigator>
 		</NavigationContainer>

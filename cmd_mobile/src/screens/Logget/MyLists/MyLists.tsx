@@ -22,7 +22,6 @@ function MyLists() {
 		{ commander: 'Shorikai, Genesis Engine', data: '02/03/2020' },
 		{ commander: 'Meren of Clan Nel Toth', data: '20/05/2013' },
 	]);
-
 	return (
 		<Container>
 			<ContentHeader>
