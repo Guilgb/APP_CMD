@@ -7,6 +7,8 @@ import { Tournments } from '../screens/Logget/Tournments/Tournments';
 import { CreateMyLists } from '../screens/Logget/CreateMyLists/CreateMyLists';
 import { MyLists } from '../screens/Logget/MyLists/MyLists';
 import { StackComponentLogget } from './StacksLogget';
+import { createStackNavigator } from '@react-navigation/stack';
+import { UpdateMyLists } from '../screens/Logget/UpdateMyLists/UpdateMyLists';
 
 const StyleTab = StyleSheet.create({
 	tabB: {
@@ -26,6 +28,7 @@ const StyleTab = StyleSheet.create({
 	},
 });
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const TabNavigator = () => {
 	return (
@@ -65,11 +68,7 @@ const TabNavigator = () => {
 						),
 					}}
 				/>
-				<Tab.Screen
-					name="UpdateMyLists"
-					component={StackComponentLogget}
-					options={{ headerShown: false }}
-				/>
+				<Stack.Screen name="UpdateMyLists" component={UpdateMyLists} />
 			</Tab.Navigator>
 		</NavigationContainer>
 	);

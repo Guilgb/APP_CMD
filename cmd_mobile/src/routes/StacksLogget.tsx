@@ -20,8 +20,7 @@ const StackComponentLogget = () => {
 					headerShown: false,
 				}}
 			>
-				<Stack.Screen name="UpdateMyLists" component={UpdateMyLists} />
-				<Stack.Screen name="TabNavigation" component={TabNavigator.TabNavigator} />
+				<Stack.Screen name="UpdateMyLists" component={UpdateMyLists} options={{}} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

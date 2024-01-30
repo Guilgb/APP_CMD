@@ -116,9 +116,7 @@ function UpdateMyLists() {
 					/>
 				</BoxTextInput>
 
-				<ButtonListUpdate
-					onPressIn={handleSubmit(handleList)}
-				>
+				<ButtonListUpdate onPress={handleSubmit(handleList)}>
 					<TextButtonListUpdate> Update </TextButtonListUpdate>
 				</ButtonListUpdate>
 			</ContentBody>
