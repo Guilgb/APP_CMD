@@ -69,7 +69,7 @@ const Login: React.FC = () => {
 					<LoginButton
 						onPressIn={handleSubmit(handleLogin)}
 						onPress={() => {
-							navigate('TabNavigator');
+							navigate('TabRoutes');
 						}}
 					>
 						<TextLoginButton>Entrar</TextLoginButton>

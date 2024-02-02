@@ -5,8 +5,6 @@ import {
 	DateListCreateBox,
 	CommanderText,
 	DateText,
-	OptionsBar,
-	ImageSearch,
 } from './style';
 type Props = {
 	textCommander: string;

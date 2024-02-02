@@ -12,7 +12,6 @@ import {
 	TextButtonListUpdate,
 } from './style';
 import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
-import { TextTitle } from '../../../components/Title/Title';
 import { Title } from '../../../components/Title/style';
 
 function handleList(data: any) {
@@ -125,4 +124,4 @@ function UpdateMyLists() {
 	);
 }
 
-export { UpdateMyLists };
+export default { UpdateMyLists };
