@@ -1,45 +1,61 @@
-import { useForm, Controller } from 'react-hook-form';
 import {
-	ButtonRegister,
-	BoxInp,
 	colors,
 	Countainer,
 	ContentBody,
 	ContentFooter,
-	ContentHeader,
-	ForgotThePassword,
+	ButtonLetsGo,
+	TextButtonLetsGo,
 	Imageback,
-	ForgotThePasswordtext,
-	LoginButton,
-	Tittle,
-	TextButtonRegister,
+	BoxInp,
 	TextInp,
-	TextLoginButton,
+	RegisterButton,
+	TextRegisterButton,
 } from './style';
+import { Header } from '../../../components/Header/index';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { useForm, Controller } from 'react-hook-form';
 
-const Login: React.FC = () => {
-	const { navigate } = useNavigation();
+const SignUp: React.FC = () => {
+	const navigation = useNavigation();
+	function goBack() {
+		navigation.goBack();
+	}
 
 	const {
 		control,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-	
-	function handleLogin(data: any) {
+
+	function handleRegister(data: any) {
 		console.log(data);
 	}
+
 	return (
 		<Countainer>
 			<Imageback source={require('../../../assets/sol.png')}>
-				<ContentHeader></ContentHeader>
+				<Header showBackButton={false} />
 				<ContentBody>
 					<BoxInp>
 						<Controller
 							control={control}
-							name="email"
+							name="UserName"
+							render={({ field: { onChange, onBlur, value } }) => (
+								<TextInp
+									placeholder="Nome do Usuário"
+									placeholderTextColor={'white'}
+									onChangeText={onChange}
+									value={value}
+									onBlur={onBlur}
+								/>
+							)}
+						/>
+					</BoxInp>
+					<BoxInp>
+						<Controller
+							control={control}
+							name="Email"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Email"
@@ -54,7 +70,7 @@ const Login: React.FC = () => {
 					<BoxInp>
 						<Controller
 							control={control}
-							name="senha"
+							name="PassWord"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Senha"
@@ -64,34 +80,17 @@ const Login: React.FC = () => {
 									onBlur={onBlur}
 								/>
 							)}
-						></Controller>
+						/>
 					</BoxInp>
-
-					<LoginButton
-						onPressIn={handleSubmit(handleLogin)}
-						onPress={() => {
-							navigate('TabRoutes');
-						}}
-					>
-						<TextLoginButton>Entrar</TextLoginButton>
-					</LoginButton>
-
-					<ForgotThePassword>
-						<ForgotThePasswordtext>Esqueci minha senha</ForgotThePasswordtext>
-					</ForgotThePassword>
+					<RegisterButton onPressIn={handleSubmit(handleRegister)}>
+						<TextRegisterButton>Registar-se</TextRegisterButton>
+					</RegisterButton>
 				</ContentBody>
 				<ContentFooter>
 					<LinearGradient colors={colors} style={{ flex: 1 }}>
-						<Tittle>Ainda não se</Tittle>
-						<Tittle>cadastrou?</Tittle>
-
-						<ButtonRegister
-							onPress={() => {
-								navigate('SignUp');
-							}}
-						>
-							<TextButtonRegister> Cadastrar-se </TextButtonRegister>
-						</ButtonRegister>
+						<ButtonLetsGo onPress={goBack}>
+							<TextButtonLetsGo> Voltar a Tela de Login </TextButtonLetsGo>
+						</ButtonLetsGo>
 					</LinearGradient>
 				</ContentFooter>
 			</Imageback>
@@ -99,4 +98,4 @@ const Login: React.FC = () => {
 	);
 };
 
-export { Login };
+export { SignUp };
