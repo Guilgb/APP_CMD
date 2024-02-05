@@ -1,11 +1,19 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
 import { Foundation, FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { Tournments } from '../screens/Logget/Tournments/Tournments';
 import { CreateMyLists } from '../screens/Logget/CreateMyLists/CreateMyLists';
 import { MyLists } from '../screens/Logget/MyLists/MyLists';
 
-const { Screen, Navigator } = createBottomTabNavigator();
+type TabRoutes = {
+	Tournments: undefined;
+	MyLists: undefined;
+	CreateMyLists: undefined;
+};
+
+export type TabNavigationRoutesProps = BottomTabNavigationProp<TabRoutes>;
+
+const { Screen, Navigator } = createBottomTabNavigator<TabRoutes>();
 
 const StyleTab = StyleSheet.create({
 	tabB: {
