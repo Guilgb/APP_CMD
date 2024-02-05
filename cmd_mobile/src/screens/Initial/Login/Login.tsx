@@ -18,6 +18,8 @@ import {
 } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import * as yup from 'yup';
+
 
 const Login: React.FC = () => {
 	const { navigate } = useNavigation();
@@ -27,7 +29,7 @@ const Login: React.FC = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-	
+
 	function handleLogin(data: any) {
 		console.log(data);
 	}

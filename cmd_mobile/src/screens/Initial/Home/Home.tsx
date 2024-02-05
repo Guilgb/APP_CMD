@@ -1,8 +1,6 @@
-import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import {
 	colors,
 	Countainer,
-	ContentHeader,
 	ContentBody,
 	ContentFooter,
 	Tittle,
