@@ -1,6 +1,6 @@
 import type {Types} from 'mongoose';
 
-export interface MyDecks {
+export interface MyLists {
     format: string;
     list_name: string;
     commander: string;
@@ -11,7 +11,7 @@ export interface MyDecks {
 }
 
 
-export interface MyDecks {
+export interface iMyLists {
     _id?: Types.ObjectId
     format: string;
     list_name: string;
