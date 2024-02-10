@@ -16,3 +16,5 @@ const schema = new Schema<iUser>(
         ]
     }
 );
+
+export default schema;
