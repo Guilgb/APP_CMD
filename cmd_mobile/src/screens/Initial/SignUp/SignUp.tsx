@@ -15,6 +15,15 @@ import { Header } from '../../../components/Header/index';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, Controller } from 'react-hook-form';
+import { api } from '../../../service/api'
+import axios from 'axios';
+import { Alert } from 'react-native';
+
+type FormDataRegister = {
+	name: string;
+	password: string;
+	email: string;
+};
 
 const SignUp: React.FC = () => {
 	const navigation = useNavigation();
@@ -26,10 +35,17 @@ const SignUp: React.FC = () => {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm<FormDataRegister>();
 
-	function handleRegister(data: any) {
-		console.log(data);
+	async function handleRegister({name, email, password}: FormDataRegister) { 
+		try {
+			const response = await api.post('/user', {name, password, email})
+			console.log(response.data);
+		} catch (error) {
+			if(axios.isAxiosError(error)){
+				Alert.alert(error.response?.data.message);
+			}
+		}
 	}
 
 	return (
@@ -40,7 +56,7 @@ const SignUp: React.FC = () => {
 					<BoxInp>
 						<Controller
 							control={control}
-							name="UserName"
+							name="name"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Nome do Usuário"
@@ -55,7 +71,7 @@ const SignUp: React.FC = () => {
 					<BoxInp>
 						<Controller
 							control={control}
-							name="Email"
+							name="email"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Email"
@@ -70,7 +86,7 @@ const SignUp: React.FC = () => {
 					<BoxInp>
 						<Controller
 							control={control}
-							name="PassWord"
+							name="password"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Senha"

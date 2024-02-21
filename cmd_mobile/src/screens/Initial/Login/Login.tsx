@@ -20,7 +20,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import * as yup from 'yup';
 
-
+type FormDataLogin = {
+	email: string;
+	senha: string;
+};
 const Login: React.FC = () => {
 	const { navigate } = useNavigation();
 
