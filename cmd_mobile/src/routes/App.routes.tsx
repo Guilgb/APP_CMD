@@ -6,18 +6,18 @@ import { LogStackRoutes } from './log.stack.routes';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
-export function StacksRoutesMain() {
+export function AppRoutesMain() {
 	return (
 		<Navigator
 			screenOptions={{
 				headerShown: false,
 			}}
 		>
-			<Screen name="HomeScreen" component={AuthRoutes.AuthRoutes} />
+			{/* <Screen name="HomeScreen" component={AuthRoutes.AuthRoutes} /> */}
 			<Screen name="TabRoutes" component={TabRoutes} />
 			<Screen name="UpdateMyLists" component={LogStackRoutes} />
 		</Navigator>
 	);
 }
 
-export default { StacksRoutesMain };
+export default { AppRoutesMain };

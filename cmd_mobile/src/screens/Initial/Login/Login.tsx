@@ -19,22 +19,33 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import * as yup from 'yup';
+import { useAuth } from '../../../hooks/useAuth';
+import { Alert } from 'react-native';
+import { useState } from 'react';
 
 type FormDataLogin = {
 	email: string;
-	senha: string;
+	password: string;
 };
+
 const Login: React.FC = () => {
+	const {signIn} = useAuth();
 	const { navigate } = useNavigation();
 
 	const {
 		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm<FormDataLogin>();
 
-	function handleLogin(data: any) {
-		console.log(data);
+	async function handleLogin({email, password}: FormDataLogin) {
+		try {
+			await signIn(email, password);
+
+		} catch (error) {
+			Alert.alert('Erro ao fazer login', 'Email ou senha inválidos');
+
+		}
 	}
 	return (
 		<Countainer>
@@ -45,6 +56,7 @@ const Login: React.FC = () => {
 						<Controller
 							control={control}
 							name="email"
+							rules={{ required: 'Informe seu email'}}
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Email"
@@ -59,7 +71,8 @@ const Login: React.FC = () => {
 					<BoxInp>
 						<Controller
 							control={control}
-							name="senha"
+							rules={{ required: 'Informe sua senha'}}
+							name="password"
 							render={({ field: { onChange, onBlur, value } }) => (
 								<TextInp
 									placeholder="Senha"
@@ -73,10 +86,12 @@ const Login: React.FC = () => {
 					</BoxInp>
 
 					<LoginButton
-						onPressIn={handleSubmit(handleLogin)}
-						onPress={() => {
-							navigate('TabRoutes');
-						}}
+						
+						onPress={handleSubmit(handleLogin)}
+						// onPress={() => {
+						// 	navigate('TabRoutes');
+						// }}
+						
 					>
 						<TextLoginButton>Entrar</TextLoginButton>
 					</LoginButton>

@@ -1,10 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { StacksRoutesMain } from './stacks.routes';
+import { AppRoutesMain } from './App.routes';
+import { useAuth } from '../hooks/useAuth';
+import { AuthRoutes } from './auth.routes';
 
 export function Routes() {
+	const { user } = useAuth();
 	return (
 		<NavigationContainer>
-			<StacksRoutesMain />
+			{user.email ? <AppRoutesMain /> : <AuthRoutes />}
 		</NavigationContainer>
 	);
 }
