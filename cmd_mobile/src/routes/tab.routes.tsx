@@ -1,14 +1,17 @@
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet } from 'react-native';
-import { Foundation, FontAwesome5, AntDesign } from '@expo/vector-icons';
+import { Foundation, FontAwesome5, AntDesign, MaterialIcons } from '@expo/vector-icons';
 import { Tournments } from '../screens/Logget/Tournments/Tournments';
 import { CreateMyLists } from '../screens/Logget/CreateMyLists/CreateMyLists';
 import { MyLists } from '../screens/Logget/MyLists/MyLists';
+import { SignOut } from '../screens/Logget/SignOut/SignOut';
+import { useAuth } from '../hooks/useAuth';
 
 type TabRoutes = {
 	Tournments: undefined;
 	MyLists: undefined;
 	CreateMyLists: undefined;
+	SignOut: undefined;
 };
 
 export type TabNavigationRoutesProps = BottomTabNavigationProp<TabRoutes>;
@@ -34,6 +37,7 @@ const StyleTab = StyleSheet.create({
 });
 
 export function TabRoutes() {
+	const { signOut } = useAuth();
 	return (
 		<Navigator
 			screenOptions={{
@@ -67,6 +71,15 @@ export function TabRoutes() {
 				options={{
 					tabBarIcon: ({ color, size }) => (
 						<FontAwesome5 name="plus" color={color} size={24}></FontAwesome5>
+					),
+				}}
+			/>
+			<Screen 
+				name="SignOut"
+				component={SignOut}
+				options={{
+					tabBarIcon: ({ color, size }) => (
+						<MaterialIcons name="exit-to-app" color={color} size={24} onPress={signOut}></MaterialIcons>
 					),
 				}}
 			/>

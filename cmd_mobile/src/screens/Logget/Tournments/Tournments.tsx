@@ -15,6 +15,7 @@ import { ButtonsFormat } from '../../../components/ButtonFormat/ButtonsFormat';
 import { Search } from '../../../components/Search/Search';
 import { InfoSideBar } from '../../../components/InfoSidebar/InfoSidebar';
 import { BoxImageCommander } from '../../../components/BoxImageCommanders/BoxImageCommanders';
+import { useAuth } from '../../../hooks/useAuth';
 
 type Props = {
 	numbersTiers: any;
@@ -36,6 +37,7 @@ function Tournments() {
 		'Meren of Clan Nel Toth',
 	]);
 
+	const { user } = useAuth();
 	const [format, setFormat] = useState('cEDH');
 	return (
 		<Container>

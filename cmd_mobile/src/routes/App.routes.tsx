@@ -13,7 +13,6 @@ export function AppRoutesMain() {
 				headerShown: false,
 			}}
 		>
-			{/* <Screen name="HomeScreen" component={AuthRoutes.AuthRoutes} /> */}
 			<Screen name="TabRoutes" component={TabRoutes} />
 			<Screen name="UpdateMyLists" component={LogStackRoutes} />
 		</Navigator>
