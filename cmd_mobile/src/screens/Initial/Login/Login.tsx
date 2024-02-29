@@ -61,6 +61,7 @@ const Login: React.FC = () => {
 								<TextInp
 									placeholder="Email"
 									placeholderTextColor={'white'}
+									keyboardType="email-address"
 									onChangeText={onChange}
 									value={value}
 									onBlur={onBlur}
@@ -78,6 +79,7 @@ const Login: React.FC = () => {
 									placeholder="Senha"
 									placeholderTextColor={'white'}
 									onChangeText={onChange}
+									secureTextEntry={true}
 									value={value}
 									onBlur={onBlur}
 								/>
@@ -88,9 +90,6 @@ const Login: React.FC = () => {
 					<LoginButton
 						
 						onPress={handleSubmit(handleLogin)}
-						// onPress={() => {
-						// 	navigate('TabRoutes');
-						// }}
 						
 					>
 						<TextLoginButton>Entrar</TextLoginButton>

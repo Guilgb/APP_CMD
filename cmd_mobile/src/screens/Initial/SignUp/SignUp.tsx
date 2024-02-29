@@ -39,11 +39,11 @@ const SignUp: React.FC = () => {
 
 	async function handleRegister({name, email, password}: FormDataRegister) { 
 		try {
-			const response = await api.post('/user', {name, password, email})
+			const response = await api.post('/user', {name, password, email});
 			console.log(response.data);
 		} catch (error) {
 			if(axios.isAxiosError(error)){
-				Alert.alert(error.response?.data.message);
+				Alert.alert("deu erro aq");
 			}
 		}
 	}
