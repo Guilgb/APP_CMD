@@ -19,17 +19,20 @@ import { TextTitle } from '../../../components/Title/Title';
 import { api } from '../../../service/api'
 import axios from 'axios';
 import { Alert } from 'react-native';
+import { useAuth } from '../../../hooks/useAuth';
+
 
 type FormDataDeck = {
-	nameList: string;
+	name_deck: string;
 	format: string;
-	commander: string;
-	partner: string;
-	linkList: string;
+	Commander: string;
+	Partner: string;
+	Link: string;
 };
 
 function CreateMyLists() {
-	const [format, setFormat] = useState('cEDH');
+	const { user, isUserLoadingStorageData } = useAuth();
+	const [Stateformat, setFormat] = useState('cEDH');
 	const [textFormat, setTextFormat] = useState('cEDH');
 	const {
 		control,
@@ -37,9 +40,11 @@ function CreateMyLists() {
 		formState: { errors },
 	} = useForm<FormDataDeck>();
 	
-	async function handleList({nameList, format, commander, partner, linkList}: FormDataDeck) {
+	async function handleList({name_deck: name_deck, Commander: Commander, Partner: Partner, Link: Link}: FormDataDeck) {
 		try {
-			const response = await api.post('/deck', {nameList, format, commander, partner, linkList})
+			const format = Stateformat
+			const response = await api.post(`/deck/${user._id}`, {name_deck, format, Commander, Partner, Link})
+			return response.data;
 		} catch (error) {
 			if(axios.isAxiosError(error)){
 				Alert.alert(error.response?.data.message);
@@ -67,7 +72,7 @@ function CreateMyLists() {
 								renderItem={({ item }) => (
 									<ButtonsFormat
 										title={item}
-										isActive={item === format}
+										isActive={item === Stateformat}
 										onPressIn={() => onChange(item)}
 										onPress={() => {
 											setFormat(item);
@@ -83,7 +88,7 @@ function CreateMyLists() {
 				<BoxTextInput>
 					<Controller
 						control={control}
-						name="nameList"
+						name="name_deck"
 						render={({ field: { onChange, onBlur, value } }) => (
 							<TextInputList
 								placeholder="Nome da Lista"
@@ -98,7 +103,7 @@ function CreateMyLists() {
 				<BoxTextInput>
 					<Controller
 						control={control}
-						name="commander"
+						name="Commander"
 						render={({ field: { onChange, onBlur, value } }) => (
 							<TextInputList
 								placeholder="Comandante"
@@ -113,7 +118,7 @@ function CreateMyLists() {
 				<BoxTextInput>
 					<Controller
 						control={control}
-						name="partner"
+						name="Partner"
 						render={({ field: { onChange, onBlur, value } }) => (
 							<TextInputList
 								placeholder="Parceiro ou Antecedente"
@@ -128,7 +133,7 @@ function CreateMyLists() {
 				<BoxTextInput>
 					<Controller
 						control={control}
-						name="linkList"
+						name="Link"
 						render={({ field: { onChange, onBlur, value } }) => (
 							<TextInputList
 								placeholder="Link da lista"
