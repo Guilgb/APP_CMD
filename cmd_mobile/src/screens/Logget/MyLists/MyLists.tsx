@@ -83,6 +83,7 @@ function MyLists() {
 							textCommander={item.Commander}
 							textPartner={item.Partner}
 							dateCreate={'16/01/2024'}
+							deckId={item._id}
 						/>
 					)}
 				/>

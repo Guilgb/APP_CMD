@@ -13,15 +13,37 @@ import {
 } from './style';
 import { Modalize } from 'react-native-modalize';
 import { useNavigation } from '@react-navigation/native';
+import { useAuth } from '../../hooks/useAuth';
+import axios from 'axios';
+import { api } from '../../service/api';
+import { Alert } from 'react-native';
 
-function PopUpMenu() {
+type Props = {
+	deckId: string;
+};
+
+
+function PopUpMenu({deckId}: Props) {
+	const { navigate } = useNavigation();
+	const { user, isUserLoadingStorageData } = useAuth();
 	const [visible, setVisible] = useState(false);
 	const modalizeRef = useRef<Modalize>(null);
 
 	function onOpen() {
 		modalizeRef.current?.open();
 	}
-	const { navigate } = useNavigation();
+
+	async function handleDelete() {
+		try {
+			const response = await api.delete(`/deck/${deckId}/user/${user._id}`)
+			return response.data;
+		} catch (error) {
+			if(axios.isAxiosError(error)){
+				Alert.alert(error.response?.data.message);
+			}
+		}
+	}
+
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
 			<Container>
@@ -40,7 +62,10 @@ function PopUpMenu() {
 						>
 							<TextButtonMod>Editar</TextButtonMod>
 						</EditeButton>
-						<DeleteButton>
+						<DeleteButton onPress={() =>{
+							handleDelete();
+							modalizeRef.current?.close();
+						}}>
 							<TextButtonMod>Apagar</TextButtonMod>
 						</DeleteButton>
 					</Options>

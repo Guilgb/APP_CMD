@@ -10,8 +10,9 @@ type Props = {
 	textCommander: string;
 	textPartner?: string;
 	dateCreate: string;
+	deckId: string;
 };
-function MyListsComponent({ textCommander, textPartner, dateCreate }: Props) {
+function MyListsComponent({ textCommander, textPartner, dateCreate, deckId }: Props) {
 	return (
 		<Container>
 			<CommanderTextsBox>
@@ -21,7 +22,7 @@ function MyListsComponent({ textCommander, textPartner, dateCreate }: Props) {
 			<DateListCreateBox>
 				<DateText>{dateCreate}</DateText>
 			</DateListCreateBox>
-			<PopUpMenu />
+			<PopUpMenu deckId={deckId}/>
 		</Container>
 	);
 }
